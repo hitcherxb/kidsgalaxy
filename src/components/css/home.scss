@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+$Primary: black;
+$Secondary: white;
+$mobile-view: 900px;
+
+    // Mobile View
+
+
+@mixin Flex($direction) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+body{
+    background: #43C6AC;  
+    background: -webkit-linear-gradient(to top, #F8FFAE, #43C6AC); 
+    background: linear-gradient(to top, #F8FFAE, #43C6AC);
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+
+nav{
+    @include Flex(column);
+    justify-content: center;
+    align-items: center;
+
+    img{
+        width: 70vw;
+        
+    }
+
+    .buttonGroup{
+        background-color: $Secondary;
+        color: $Primary;
+    }
+}
+.carouselPic{
+    
+    width: 100vh;
+    height: 50vh;
+    left: 0;
+    align-items: center;
+    border: none;
+}
+#carousel{
+    @include Flex(column);
+    width: 100vw;
+    height: 62vh;
+    margin-top: 5vw;
+    background: none;
+    border: none;
+
+    h2, p, div{
+        text-align: center;
+        border: none;
+    }
+
+    button{
+        background-color: white;
+    }
+}
+
+.banner{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-top: 2vw;
+}
+
+footer{
+    height: 8vh;
+    @include Flex(row);
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+    //Desktop View
+@media (min-width: $mobile-view) {
+    @mixin Flex($direction) {
+        display: flex;
+        flex-direction: $direction;
+    }
+    body{
+        background: #43C6AC;  
+        background: -webkit-linear-gradient(to top, #F8FFAE, #43C6AC); 
+        background: linear-gradient(to top, #F8FFAE, #43C6AC);
+        background-repeat: no-repeat;
+        width: 100vw;
+        height: 10vh;
+    }
+
+    nav{
+        @include Flex(row);
+        justify-content: space-between;
+
+        img{
+            width: 20vw;
+            height: 5vw;
+        }
+
+        .buttonGroup{
+            background-color: $Secondary;
+            color: $Primary;
+        }
+    }
+    .carouselPic{
+        
+        width: 100vh;
+        height: 50vh;
+        left: 0;
+        align-items: center;
+        border: none;
+    }
+    #carousel{
+        @include Flex(column);
+        width: 100vw;
+        height: 62vh;
+        margin-top: 5vw;
+        background: none;
+        border: none;
+
+        h2, p, div{
+            text-align: center;
+            border: none;
+        }
+
+        button{
+            background-color: white;
+        }
+    }
+
+    .banner{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+        padding-top: 2vw;
+    }
+    footer{
+        height: 8vh;
+        @include Flex(row);
+        justify-content: space-evenly;
+        align-items: center;
+        .icon{
+            height: 4vh;
+            width: 4vw;
+            color: $Primary;
+        }
+    }
+}
+
